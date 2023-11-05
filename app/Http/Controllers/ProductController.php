@@ -69,17 +69,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         return Inertia::render('Product/Edit', [
-            'product' => [
-                'id' => $product->id,
-                'title' => $product->title,
-                'description' => $product->description,
-                'price' => $product->price,
-                'unit' => $product->unit,
-                'quantity' => $product->quantity,
-                'stock' => $product->stock,
-                'tags' => $product->tags,
-                'image' => $product->image,
-            ],
+            'product' => $product,
         ]);
     }
 
