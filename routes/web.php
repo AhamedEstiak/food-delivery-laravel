@@ -38,4 +38,11 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('products', ProductController::class);
 
+Route::middleware('auth')->group(function () {
+    Route::get('/restaurants', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/restaurants/details', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
 require __DIR__.'/auth.php';
