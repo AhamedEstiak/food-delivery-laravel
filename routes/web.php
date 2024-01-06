@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RestaurantController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -38,9 +39,11 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('products', ProductController::class);
 
+Route::get('/restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
+
 Route::middleware('auth')->group(function () {
-    Route::get('/restaurants', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::get('/restaurants/details', [ProfileController::class, 'edit'])->name('profile.edit');
+
+    // Route::get('/restaurants/details', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
