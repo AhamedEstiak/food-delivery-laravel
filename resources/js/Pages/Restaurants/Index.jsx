@@ -3,6 +3,7 @@ import { Link, Head } from "@inertiajs/react";
 
 import GuestLayout from "@/Layouts/GuestLayout";
 import Pagination from "@/Shared/Pagination";
+import RatingStars from "@/Shared/RatingStars";
 
 export default function Index({ restaurants, ziggy: { url } }) {
     const { data,  links } = restaurants;
@@ -43,25 +44,30 @@ export default function Index({ restaurants, ziggy: { url } }) {
                             <div className="mt-4 flex justify-between">
                                 <div>
                                     <h3 className="text-sm text-gray-700">
-                                        {/* <Link
-                                            href={route("restaurant.show", {
+                                        <Link
+                                            href={route("restaurants.show", {
                                                 restaurant: restaurant,
                                             })}
-                                        > */}
-                                        <span
-                                            aria-hidden="true"
-                                            className="absolute inset-0"
-                                        />
-                                        {restaurant.name}
-                                        {/* </Link> */}
+                                        >
+                                            <span
+                                                aria-hidden="true"
+                                                className="absolute inset-0"
+                                            />
+                                            {restaurant.name}
+                                        </Link>
                                     </h3>
-                                    {/* <p className="mt-1 text-sm text-gray-500">
-                                        Stock: {product.stock}
-                                    </p> */}
+                                    <div className="mt-2">
+                                        <RatingStars
+                                            rating={restaurant.rating}
+                                        />
+                                        <Link
+                                            href="#"
+                                            className="text-sm font-medium text-gray-900 underline hover:no-underline"
+                                        >
+                                            73 reviews
+                                        </Link>
+                                    </div>
                                 </div>
-                                {/* <p className="text-sm font-medium text-gray-900">
-                                    BDT {product.price}
-                                </p> */}
                             </div>
                             {/* <Tags tags={product.tags} /> */}
                         </div>
@@ -83,7 +89,6 @@ export default function Index({ restaurants, ziggy: { url } }) {
     return (
         <GuestLayout>
             <Head title="Restaurant list" />
-            <h1 className="center">Restaurant list</h1>
             {content}
         </GuestLayout>
     );

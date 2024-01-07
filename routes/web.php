@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
 Route::resource('products', ProductController::class);
 
 Route::get('/restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
-// Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show']);
+Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show'])->name('restaurants.show');
 
 Route::middleware('auth')->group(function () {
 
