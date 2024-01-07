@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class RestaurantController extends Controller
 {
@@ -29,8 +30,15 @@ class RestaurantController extends Controller
    */
   public function list()
   {
+
+    $user = Auth::user(); // get the authenticated user
+
     return Inertia::render(
-      'Restaurants/Index'
+      'Restaurants/List',
+      [
+        'restaurant_list' => Restaurant::where('user_id', $user->id)->latest()->paginate(10),
+        'authUser' => $user,
+      ]
     );
   }
 
@@ -39,7 +47,9 @@ class RestaurantController extends Controller
    */
   public function create()
   {
-    //
+    return Inertia::render(
+        'Restaurants/Create'
+    );
   }
 
   /**

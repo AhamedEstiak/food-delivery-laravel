@@ -45,7 +45,7 @@ Route::get('/restaurants', [RestaurantController::class, 'index'])->name('restau
 Route::middleware('auth')->group(function () {
     Route::get('/restaurants/list', [RestaurantController::class, 'list'])->name('restaurants.list');
     Route::post('/restaurants/store', [RestaurantController::class, 'store'])->name('restaurants.store');
-    Route::post('/restaurants/create', [RestaurantController::class, 'create'])->name('restaurants.create');
+    Route::get('/restaurants/create', [RestaurantController::class, 'create'])->name('restaurants.create');
     
 
 
