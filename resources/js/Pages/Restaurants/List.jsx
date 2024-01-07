@@ -69,6 +69,18 @@ export default function List({ auth, restaurant_list, ziggy: { url }}) {
                                         {restaurant.name}
                                         {/* </Link> */}
                                     </h3>
+                                    {/* <div className="mt-2">
+                                        <RatingStars
+                                            rating={restaurant.rating}
+                                        />
+                                        <Link
+                                            href="#"
+                                            className="text-sm font-medium text-gray-900 underline hover:no-underline"
+                                        >
+                                            73 reviews
+                                        </Link>
+                                    </div> */}
+                                    
                                     {/* <p className="mt-1 text-sm text-gray-500">
                                         Stock: {product.stock}
                                     </p> */}
