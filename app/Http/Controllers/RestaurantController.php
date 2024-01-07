@@ -13,8 +13,12 @@ class RestaurantController extends Controller
    */
   public function index()
   {
+    // dd(Restaurant::all());
     return Inertia::render(
-      'Restaurants/Index'
+      'Restaurants/Index',
+      [
+        'restaurants' => Restaurant::latest()->paginate(10),
+      ]
     );
   }
 
@@ -39,7 +43,13 @@ class RestaurantController extends Controller
    */
   public function show(Restaurant $restaurant)
   {
-    //
+    dd($restaurant);
+    return Inertia::render(
+      'Restaurants/Show',
+      [
+        'restaurant' => $restaurant,
+      ]
+    );
   }
 
   /**
