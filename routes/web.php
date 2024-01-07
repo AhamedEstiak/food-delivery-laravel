@@ -42,6 +42,11 @@ Route::resource('products', ProductController::class);
 Route::get('/restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/restaurants/list', [RestaurantController::class, 'list'])->name('restaurants.list');
+    Route::post('/restaurants/store', [RestaurantController::class, 'store'])->name('restaurants.store');
+    Route::post('/restaurants/create', [RestaurantController::class, 'create'])->name('restaurants.create');
+    
+
 
     // Route::get('/restaurants/details', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
