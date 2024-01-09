@@ -1,13 +1,14 @@
 import React from "react";
-import { Link, Head } from "@inertiajs/react";
+import { Link, Head, router } from "@inertiajs/react";
 
 import GuestLayout from "@/Layouts/GuestLayout";
 import Pagination from "@/Shared/Pagination";
 import RatingStars from "@/Shared/RatingStars";
 
 export default function Index({ restaurants, ziggy: { url } }) {
-    const { data,  links } = restaurants;
+    const { data, links } = restaurants;
 
+    console.log(links);
     const content = (
         <div className="bg-gray-200">
             <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">

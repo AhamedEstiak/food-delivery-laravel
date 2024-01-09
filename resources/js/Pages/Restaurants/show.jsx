@@ -5,8 +5,6 @@ import GuestLayout from "@/Layouts/GuestLayout";
 import RatingStars from "@/Shared/RatingStars";
 
 export default function show({ restaurant }) {
-    console.log(restaurant);
-
     const content = (
         <div className="flex items-center justify-content-center bg-gray-200">
             <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-12 lg:px-8">
@@ -18,8 +16,7 @@ export default function show({ restaurant }) {
                             //         ? `${url}/${product.image}`
                             //         : "https://picsum.photos/300/400"
                             // }
-                            src={"https://picsum.photos/300/400"
-                            }
+                            src={"https://picsum.photos/300/400"}
                             className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                         />
                     </div>
