@@ -77,13 +77,7 @@ class RestaurantController extends Controller
    */
   public function show(Restaurant $restaurant)
   {
-    // dd($restaurant);
-    return Inertia::render(
-      'Restaurants/Show',
-      [
-        'restaurant' => $restaurant,
-      ]
-    );
+    return Inertia::render('Restaurants/Show', ['restaurant' => $restaurant]);
   }
 
   /**
