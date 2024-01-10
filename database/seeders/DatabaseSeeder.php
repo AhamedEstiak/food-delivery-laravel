@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Dish;
+use App\Models\Price;
 use App\Models\Restaurant;
+use App\Models\RestaurantDish;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,5 +25,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Restaurant::factory(30)->create();
+        Dish::factory(90)->create();
+        RestaurantDish::factory(90)->create();
+        Price::factory(90)->create();
     }
 }
