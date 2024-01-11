@@ -46,10 +46,13 @@ export default function show({ restaurant, dishes }) {
                             {dishes.map((dish) => (
                                 <li key={dish.id} className="mb-2">
                                     <h3 className="text-sm font-semibold">
-                                        {dish.name}
+                                        Name: <i>{dish.name}</i>
                                     </h3>
                                     <p className="text-gray-700">
-                                        {dish.description}
+                                        Description: <i>{dish.description}</i>
+                                    </p>
+                                    <p className="text-gray-700">
+                                        Cuisine Type: <i>{dish.cuisine_type}</i>
                                     </p>
                                     {/* Add more fields as needed */}
                                 </li>
