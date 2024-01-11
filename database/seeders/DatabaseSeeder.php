@@ -6,8 +6,11 @@ namespace Database\Seeders;
 
 use App\Models\Dish;
 use App\Models\Price;
+use App\Models\Review;
 use App\Models\Restaurant;
+use App\Models\SpecialOffer;
 use App\Models\RestaurantDish;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -28,5 +31,7 @@ class DatabaseSeeder extends Seeder
         Dish::factory(90)->create();
         RestaurantDish::factory(90)->create();
         Price::factory(90)->create();
+        SpecialOffer::factory(90)->create();
+        Review::factory(200)->create();
     }
 }
