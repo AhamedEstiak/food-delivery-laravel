@@ -77,7 +77,14 @@ class RestaurantController extends Controller
    */
   public function show(Restaurant $restaurant)
   {
-    return Inertia::render('Restaurants/Show', ['restaurant' => $restaurant]);
+    
+    // $price = $restaurant->load[('dishes.price')] // using eager loading for efficiency to fetch price from dishes
+    $restaurant->load('dishes'); // eager load
+
+    return Inertia::render('Restaurants/Show', [
+      'restaurant' => $restaurant,
+      'dishes' => $restaurant->dishes,
+    ]);
   }
 
   /**

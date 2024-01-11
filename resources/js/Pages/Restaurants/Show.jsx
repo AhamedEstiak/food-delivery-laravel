@@ -4,7 +4,9 @@ import { Link, Head } from "@inertiajs/react";
 import GuestLayout from "@/Layouts/GuestLayout";
 import RatingStars from "@/Shared/RatingStars";
 
-export default function show({ restaurant }) {
+export default function show({ restaurant, dishes }) {
+    console.log("Restaurant Data:", restaurant);
+    console.log("Dishes Data:", dishes);
     const content = (
         <div className="flex items-center justify-content-center bg-gray-200">
             <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-12 lg:px-8">
@@ -37,6 +39,22 @@ export default function show({ restaurant }) {
                                 </Link>
                             </div>
                         </div>
+                    </div>
+                    <div className="mt-8">
+                        <h2 className="text-lg font-semibold mb-4">Dishes</h2>
+                        <ul>
+                            {dishes.map((dish) => (
+                                <li key={dish.id} className="mb-2">
+                                    <h3 className="text-sm font-semibold">
+                                        {dish.name}
+                                    </h3>
+                                    <p className="text-gray-700">
+                                        {dish.description}
+                                    </p>
+                                    {/* Add more fields as needed */}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>

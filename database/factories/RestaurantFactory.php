@@ -21,12 +21,12 @@ class RestaurantFactory extends Factory
         $user = User::factory()->create();
         
         return [
-            'name' => fake()->text(150),
-            'description' => fake()-> text(250),
-            'address' => fake()-> text(250),
-            'rating' => fake()-> randomFloat(2, 0, 5),
-            'lat' => fake()->latitude(),
-            'lon' => fake()-> longitude(),
+            'name' => $this->faker->text(150), // Fix the method call here
+            'description' => $this->faker->text(250),
+            'address' => $this->faker->text(250),
+            'rating' => $this->faker->randomFloat(2, 0, 5),
+            'lat' => $this->faker->latitude(),
+            'lon' => $this->faker->longitude(),
             'user_id' => $user->id,
         ];
     }
